@@ -75,7 +75,7 @@ export default function Preview() {
   return (
     <div
       ref={containerRef}
-      className="w-full h-full overflow-hidden"
+      className="w-full h-full flex items-center justify-center"
       style={{ backgroundColor: '#0a0a1a' }}
     >
       <div
@@ -84,12 +84,8 @@ export default function Preview() {
           width: 1920,
           height: 1080,
           transform: `scale(${scale})`,
-          transformOrigin: 'top left',
-          position: 'absolute',
-          left: '50%',
-          top: '50%',
-          marginLeft: -960,
-          marginTop: -540,
+          transformOrigin: 'center center',
+          flexShrink: 0,
         }}
       >
         {rootComponentIds.map((id) => renderComponent(id))}
